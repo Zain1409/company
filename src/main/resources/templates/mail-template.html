@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<p style="color: red; font-weight: bold" th:text="'Dear ' + ${name} + ','"></p>
+<br>
+<p>Chúc mừng bạn đã đăng ký tài khoản thành công</p>
+<p th:text="'Địa chỉ: ' + ${address}"></p>
+<p th:text="'Số điện thoại: ' + ${phone}"></p>
+<p th:text="'Role: ' + ${roles}"></p>
+<p th:text="'Công ty: '" + ${companyName}></p>
+<p>Thanks!</p>
+</body>
+</html>

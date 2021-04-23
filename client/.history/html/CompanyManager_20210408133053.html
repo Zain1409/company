@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manaa</title>
+    <link rel="stylesheet" href="./../css/CompanyManager.css">
+</head>
+<body>
+    <div id="header">
+        <p>Logo</p>
+    </div>
+    <div class="container">
+        <div id="content">
+            <div id="head">
+                <p>Company Management</p>
+            </div>
+             <form id="form">
+                    <label id="properties">Company</label> <input id="code" type="text" placeholder="Company code" style="width: 108px;"> <input id="name" type="text" placeholder="Please enter Company name">
+                    <br>
+                    <br>
+                    <label id="properties">Email</label> <input id="email" type="text" placeholder="Please enter Email" >
+                    <br>
+                    <br>
+                    <label id="properties">Phone number</label> <input id="phone_number" type="text" placeholder="Please enter Phone number" >
+                    <br>
+                    <br>
+                    <label id="properties">Status</label> <select name="" id="form_select" >
+                        <option value="" disabled selected >Select your option</option>
+                        <option value="stopped">Stopped</option>
+                        <option value="working">Working</option>
+                        <option value="pending">Pending</option>
+                      </select>
+                    </select>
+                </form>
+            <div id="table_button">
+               <div id="all_button">
+                <button style="background: var(--unnamed-color-18c090) 0% 0% no-repeat padding-box;
+                background: #18C090 0% 0% no-repeat padding-box;">Register</button>
+                <button style="background: #0058FF 0% 0% no-repeat padding-box;" id="Search">Search</button>
+                <button style="background: var(--unnamed-color-000000) 0% 0% no-repeat padding-box;
+                background: #000000 0% 0% no-repeat padding-box;">Back</button>
+               </div>
+               <div id="table_result">
+                    <div id="all_table">
+                        <table border="1px solid #cea9a9 ">
+                            <thead>
+                                <tr>
+                                    <th style="width: 159px;
+                                    height: 48px;">Code</th>
+                                    <th style="width: 232px;
+                                    height: 48px;">Company</th>
+                                    <th style="width: 235px;
+                                    height: 48px;">Email</th>
+                                    <th style="width: 199px;
+                                    height: 48px;">Phone number</th>
+                                    <th style="width: 160px;
+                                    height: 48px;">Status</th>
+                                    <th style="width: 199px;
+                                    height: 48px;"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_body">
+                                <!-- <tr>
+                                    <td>BR001</td>
+                                    <td>ABC</td>
+                                    <td>abc@gmail.com</td>
+                                    <td>012345678</td>
+                                    <td>Stopped</td>
+                                    <td><button style="background: #30C0F0 0% 0% no-repeat padding-box;">Detail</button><button style="background: #D31212 0% 0% no-repeat padding-box;">Delete</button></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+               </div>
+            </div>
+            <div id="footer">
+                <div id="pages">
+                    <div id="pages_left">
+                        <p>Row per page</p>
+                        <select name="" id="choose">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                    <div id="pages_right">
+                        <div style="clear: both; display: flex;">
+                            <p style="font-weight: bold; display: inline-block; margin: 0; padding-top: 8px;">
+                                <span id="start">0</span> - <span id="end">0</span> of <span id="total">0</span>
+                            </p>
+                            <!-- <a href="#" class="previous">Previous</a>
+                            <a href="#" class="number1" style="background: #007BFF 0% 0% no-repeat padding-box;">1</a>
+                            <a href="#" class="number2">2</a>
+                            <a href="#" class="number3">3</a>
+                            <a href="#" class="next">Next</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./../js/Manager.js"></script>
+    <!-- <script>
+        var company = [
+            {
+                'code': 'BR001',
+                'name': 'ABC',
+                'email': 'abc@gmail.com',
+                'phone_number': '012345678',
+                'status': 'Stopped',
+            },
+            {
+                'code': 'BR001',
+                'name': 'ABC',
+                'email': 'abc@gmail.com',
+                'phone_number': '012345678',
+                'status': 'Stopped',
+            },
+            {
+                'code': 'BR001',
+                'name': 'ABC',
+                'email': 'abc@gmail.com',
+                'phone_number': '012345678',
+                'status': 'Pending',
+            },
+            {
+                'code': 'BR001',
+                'name': 'ABC',
+                'email': 'abc@gmail.com',
+                'phone_number': '012345678',
+                'status': 'Stopped',
+            },
+            {
+                'code': 'BR001',
+                'name': 'ABC',
+                'email': 'abc@gmail.com',
+                'phone_number': '012345678',
+                'status': 'Working',
+            },
+           
+        ];
+        function init(){
+            var tmp = "";
+            for(let i = 0; i < company.length; i++){
+                tmp +='<tr>';
+                tmp    +=    '<td>'+company[i].code+'</td>';
+                tmp        +=    '<td>'+company[i].name+'</td>';
+                tmp        +=    '<td>'+company[i].email+'</td>';
+                tmp        +=    '<td>'+company[i].phone_number+'</td>';
+                tmp        +=    '<td id="'+company[i].status+'">'+company[i].status+'</td>';
+                tmp        +=    '<td><button style="background: #30C0F0 0% 0% no-repeat padding-box;">Detail</button><button style="background: #D31212 0% 0% no-repeat padding-box;">Delete</button></td>';
+                tmp        +='</tr>';
+            }
+            document.getElementById("table_body").innerHTML = tmp;
+        }
+        init();
+    </script> -->
+</body>
+</html>

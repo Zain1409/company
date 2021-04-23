@@ -1,0 +1,3 @@
+console getCompanyById = as(id) => {
+
+}

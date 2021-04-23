@@ -1,0 +1,38 @@
+.header{
+    /* width: 1280px;
+    height: 50px;
+    background: #F6F8F9 0% 0% no-repeat padding-box;
+    box-shadow: 30px 3px 6px #00000029;
+    border: 0.5px solid #ACABAB;
+    opacity: 1; */
+    width: 1280px;
+    height: 50px;
+    background: #F6F8F9 0% 0% no-repeat padding-box;
+    box-shadow: 30px 3px 6px #00000029;
+    border: 0.5px solid #ACABAB;
+    opacity: 1;
+    margin: auto;
+}
+.header p{
+   
+    width: 67px;
+    height: 39px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    color: #131523;
+    opacity: 1;
+    text-align: center;
+    padding-top: 15px;
+    margin: 0;
+
+}
+.header p{
+    width: 67px;
+    height: 39px;
+    text-align: left;
+    font: normal normal medium 28px/42px Poppins;
+    letter-spacing: 0.12px;
+    color: #131523;
+    opacity: 1;
+}
